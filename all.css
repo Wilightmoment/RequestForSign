@@ -1,0 +1,380 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif TC', serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 368px;
+}
+
+.red {
+  color: red !important;
+}
+
+.bg-sign {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-img {
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1473090731544-e0402eb455de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: calc(100% - 126px);
+  overflow: hidden;
+  mix-blend-mode: hard-light;
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+}
+
+.bg-img.full {
+  height: 100%;
+}
+
+.bg-img.full .bg-img-after {
+  visibility: hidden;
+}
+
+.bg-img .bg-img-after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(rgba(0, 0, 0, 0.2)));
+  background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.2));
+}
+
+video {
+  opacity: .25;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-main {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sign-main.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.h1, .sign-board {
+  position: absolute;
+  color: white;
+}
+
+.h1 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 7rem;
+  right: 10%;
+  top: 5%;
+}
+
+.sign-board {
+  left: 10%;
+  bottom: 33px;
+}
+
+.sign-title {
+  font-size: 1.5rem;
+}
+
+.sign-category {
+  -ms-flex-preferred-size: 112px;
+      flex-basis: 112px;
+  border: 1px solid white;
+  padding: .5rem 0;
+  text-align: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.sign-category.active {
+  border: 1px solid #00d1ff;
+  color: #00d1ff;
+}
+
+.sign-start {
+  max-width: 350px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 24px;
+  color: black;
+  border: 1px solid black;
+  margin-top: 80px;
+  cursor: pointer;
+}
+
+.sign-start.cant {
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+.bg-line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.bg-line.active {
+  visibility: visible;
+}
+
+.bg-line .bg-line-after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8), black);
+}
+
+.line-top {
+  position: absolute;
+  height: 1px;
+  width: calc(100% - 232px);
+  top: 65.5px;
+  left: 116px;
+  background-color: #3e3f40;
+}
+
+.line-left {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 232px);
+  top: 116px;
+  left: 59px;
+  background-color: #3e3f40;
+}
+
+.line-bottom {
+  position: absolute;
+  height: 1px;
+  width: calc(100% - 232px);
+  bottom: 65.5px;
+  left: 116px;
+  background-color: #3e3f40;
+}
+
+.line-right {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 232px);
+  top: 116px;
+  right: 59px;
+  background-color: #3e3f40;
+}
+
+.bg-top {
+  color: #3e3f40;
+  font-size: 36px;
+  line-height: 51px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.bg-left {
+  color: #3e3f40;
+  font-size: 36px;
+  line-height: 51px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.bg-right {
+  color: #3e3f40;
+  font-size: 36px;
+  line-height: 51px;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.bg-bottom {
+  color: #3e3f40;
+  font-size: 36px;
+  line-height: 51px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.sign-detail {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: calc(100% - 232px);
+  height: calc(100% - 232px);
+  color: white;
+  opacity: 0;
+}
+
+.sign-detail.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sign-detail .detail-title.complete {
+  position: absolute;
+  right: 0;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  display: block;
+  height: auto;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.sign-detail .detail-title.complete > * {
+  font-size: 1rem !important;
+  letter-spacing: 0.2rem !important;
+}
+
+.sign-detail .detail-title.complete div {
+  display: inline;
+}
+
+.sign-detail .detail-title {
+  visibility: hidden;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+  opacity: 0;
+}
+
+.sign-detail .detail-title.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sign-detail .detail-title .detail-fourty {
+  font-size: 24px;
+  letter-spacing: 36px;
+}
+
+.sign-detail .detail-title .detail-year {
+  font-size: 24px;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  letter-spacing: 36px;
+}
+
+.sign-detail .detail-title .detail-lucky {
+  font-size: 240px;
+}
+
+.sign-detail .detail-title div {
+  display: block;
+}
+
+.sign-detail .detail-main {
+  visibility: hidden;
+  right: .75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.sign-detail .detail-main.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sign-detail .detail-main .detail-main-right {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-size: 40px;
+  line-height: 30px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.sign-detail .detail-main .restart {
+  border: 1px solid white;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+@-webkit-keyframes custom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes custom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=all.css.map */
